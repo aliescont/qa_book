@@ -38,8 +38,8 @@ def tagme_annotation(token, question):
 
 
 
-# book_df['tagme'] = [tagme_annotation(TOKEN, question)[0] for question in book_df['Query']]
-# book_df['tagme_rho'] = [tagme_annotation(TOKEN, question)[1] for question in book_df['Query']]
+book_df['tagme'] = [tagme_annotation(TOKEN, question)[0] for question in book_df['Query']]
+book_df['tagme_rho'] = [tagme_annotation(TOKEN, question)[1] for question in book_df['Query']]
 
 
 for sup in [0.3, 0.4, 0.5, 0.6]:
@@ -68,3 +68,5 @@ def qa_pred (data, pred):
     recall = sum(true)/(sum(true)+fn)
     precision = sum(true)/(sum(true)+fp)
     return recall, precision, sum(true), fp, fn
+
+data  = [question for question in book_df['Query']]
