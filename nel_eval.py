@@ -17,9 +17,9 @@ def NEL_spotlight(question, support):
         annotations = spotlight.annotate('https://api.dbpedia-spotlight.org/en/annotate', question, confidence=0.4, support=20) 
         question_annotations.append(annotations[0]['URI']) 
     except:
-        pass
+        question_annotations.append('') 
 
-    return question_annotations
+    return question_annotations[0]
 
 
 def tagme_annotation(token, question):
@@ -68,5 +68,3 @@ def qa_pred (data, pred):
     recall = sum(true)/(sum(true)+fn)
     precision = sum(true)/(sum(true)+fp)
     return recall, precision, sum(true), fp, fn
-
-data  = [question for question in book_df['Query']]
