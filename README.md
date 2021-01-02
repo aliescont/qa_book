@@ -27,6 +27,5 @@ Input: intent detected
 
 Output: SPARQL query
 
-The first version of this QA system is based on question that maps with only one triple of the DBpedia KG
-qa_main.ipynb contains a summary of all building blocks of this QA system
+qa_main.ipynb contains a summary of all building blocks of this QA system. The first version of this QA system is based on question that maps with only one triple of the DBpedia KG
 
