@@ -22,6 +22,8 @@ The first version of this QA system was designed to detect the following intents
 
 EDA_datasets.ipynb contains a notebook with the process followed for dataset exploration, pre-precessing and LSTM model.
 
+Model using simpletransformer was done in simpletransformer_intent_recognition.ipynb
+
 #### Query construction
 Input: intent detected
 
