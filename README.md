@@ -32,7 +32,7 @@ EDA_datasets.ipynb contains a notebook with the process followed for dataset exp
 
 Model using simpletransformer was done in simpletransformer_intent_recognition.ipynb
 
-#### Query construction
+#### Query construction and answer block
 This block was built using a rule-based approach, defining templates of SPARQL queries based on the intent detected in the previous block
 
 Input: intent detected
