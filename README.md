@@ -4,17 +4,25 @@ This project aims to build a QA system for questions of books stored in the DBpe
 
 The QA system is focus on simple questions about books, using as a baseline SimpleDBpediaQA dataset.
 
-### QA tasks
+The QA system pipeline consists of five main blocks that combines off-the-shelf components, classification algorithms and rule-based approach
+
+### QA system blocks
 
 #### Named Entity Linking
-Input: question
+This block translate the question in natural language into a concept in the DBpedia Knowledge Graph. It was done by using off-the-shelf QA components, such as DBpedia Spotlight and TagMe
+
+Input: question in natural lamguage
 
 Output: annotated entity (DBpedia KG) 
 
-Was done by using Tagme https://sobigdata.d4science.org/web/tagme/tagme-help
+Tagme https://sobigdata.d4science.org/web/tagme/tagme-help
 
 #### Intent recognition
-Input: question
+This task was done by using a multiclass classification algorithm , evaluating the performance of LSTM over BERT
+
+Dataset: SimpleDBpediaQA filtered and processed to adapt to book domain questions.
+
+Input: question in natural language
 
 Output: intent
 
@@ -25,6 +33,8 @@ EDA_datasets.ipynb contains a notebook with the process followed for dataset exp
 Model using simpletransformer was done in simpletransformer_intent_recognition.ipynb
 
 #### Query construction
+This block was built using a rule-based approach, defining templates of SPARQL queries based on the intent detected in the previous block
+
 Input: intent detected
 
 Output: SPARQL query
